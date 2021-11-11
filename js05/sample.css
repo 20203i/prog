@@ -1,0 +1,25 @@
+body{
+    background: rgba(199, 224, 245, 0.651);
+    
+}
+
+
+
+select{
+    font-size: 50px;
+    width: 100%;
+    background-color: rgba(141, 102, 167, 0.568);
+    position: relative; top: 200px;
+    position: relative; left: 500px;
+    text-align: center;   
+}
+#year{
+    position: relative; width: 200px;
+}
+#month{
+    position: relative; width: 200px;
+}
+#date{
+    position: relative; width: 200px;
+} 
+
