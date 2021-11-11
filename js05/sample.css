@@ -1,0 +1,82 @@
+body{
+    background: rgb(185, 219, 206);
+    
+}
+
+
+
+select{
+    font-size: 50px;
+    width: 100%;
+    background-color: rgba(195, 145, 228, 0.568);
+    position: relative; top: 200px;
+    position: relative; left: 500px;
+    text-align: center;   
+}
+#year{
+    position: relative; width: 200px;
+}
+#month{
+    position: relative; width: 200px;
+}
+#date{
+    position: relative; width: 200px;
+} 
+
+/* script{
+    position: absolute; top: 50px;
+}
+option{
+    position: absolute; top: 50px;
+} */
+/* header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+main{
+    border-bottom:1px solid #ccc;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    /* table-layout: fixed;
+    width:100%;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    /* cursor: pointer;
+}
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+img{
+    width: 20%;
+    height: 20%;
+}
+ 
+div{
+    box-sizing: border-box; /* 横幅を変えずにpaddingを付けたい場合 */
+    /* padding-left: 20%;
+}
+#judgment {
+    box-sizing: border-box;
+       padding-left: 60%;   
+} */
