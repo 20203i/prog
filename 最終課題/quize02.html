@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>最終制作課題</title>
+</head>
+<body>
+
+<header>
+    <h1>難読漢字クイズ</h1>
+</header>
+
+<main>
+  <div id="time" class="time">00:00:00.000</div>
+  <h2>question</h2>
+  <p id="quest" class="quest">ここに問題が出題されます<br>
+    <h7>テキストエリア内をクリックでスタート、Enterキーで解答出来ます。</h7>
+  </p>
+  <p>
+    <input type="text" class="txt" id="answer"value="ひらがなで入力">
+  </p>
+  <h3></h3>
+  <h4></h4>
+  <h5></h5>
+</main>
+
+<footer>
+  <table id="list">
+    <h6>前回のキロク</h6>
+  </table>
+</footer>
+<script>
+//ここから記述領域［START］
+
+    const timeElement = document.getElementById('time');
+    const start = document.getElementById('start');
+    const stop = document.getElementById('stop');
+
+    // 経過時間のミリ秒
+    let elapsed = 0;
+
+    let intervalId = null;
+
+    function updateTime() {
+      const ms = elapsed % 1000;
+      const s = Math.floor(elapsed / 1000) % 60;
+      const m = Math.floor(elapsed / (1000*60)) % 60;
+      const h = Math.floor(elapsed / (1000*60*60));
+
+      const msStr = ms.toString().padStart(3, '0');
+      const sStr = s.toString().padStart(2, '0');
+      const mStr = m.toString().padStart(2, '0');
+      const hStr = h.toString().padStart(2, '0');
+
+      timeElement.innerHTML = `${hStr}:${mStr}:${sStr}.${msStr}`;
+    }
+
+    answer.addEventListener('click', function(e) {
+      if (intervalId !== null) { return; }
+      let pre = new Date();
+      intervalId = setInterval(function() {
+        const now = new Date();
+        elapsed += now - pre;
+        pre = now;
+        updateTime();
+      }, 10);
+    });
+
+ 
+  //以下に配列を記述してください。
+  //問題文[配列]
+  const qs = [
+                "脱臼",
+                "呪縛",
+                "翻弄",
+                "造詣",
+                "狂奔",
+                "薫陶"
+              ];
+
+    
+  //答え[配列]
+  const ans = [
+                "だっきゅう",
+                "じゅばく",
+                "ほんろう",
+                "ぞうけい",
+                "きょうほん",
+                "くんとう"
+              ];
+  
+  let i = 0;
+
+  let count = 0;
+
+    $("#answer").on("click",function(){
+      $("#quest").text( qs[i] );
+      $("h2").text(`qestion${i+1}`);
+      $("#answer").val(""); 
+    });
+    
+
+      $("#answer").keydown(function(e){
+        if(e.key === "Enter"){
+          const v = $("#answer").val();
+            $("#answer").val("");   //テキストエリアを空にする
+              if(ans[i] == v){
+                $("h3").text("正解!");
+                count++;
+              }else{
+                $("h3").text("不正解!");
+              }
+
+              if(i!=5){
+                $("h2").text(`qestion${i+2}`);
+                i++;
+              }else{
+                $("h2").text("終了");
+                $("h4").text(`6問中${count}問正解`);
+
+                if(count == 6){
+                  $("h5").html('<img src = "kusudama.png">');
+                }else{
+                  $("h5").html('<img src = "kanashii.png">');
+                }
+                clearInterval(intervalId);
+                intervalId = null;
+              
+                localStorage.setItem(elapsed,count );
+              }
+              //i++;
+              $("#quest").text( qs[i] ); 
+
+              const key = $(elapsed).val();
+              const value = $(count).val();
+              
+              localStorage.setItem(elapsed,count );
+              localStorage.getItem(elapsed,count);  
+        }
+        
+        
+      });
+              
+      for(let r=0; r<localStorage.length; r++){
+          const timeElement = document.getElementById('time');
+          const numberWithComma = new Intl.NumberFormat();
+          const key = localStorage.key(r);//KEY名
+          const value = localStorage.getItem(key);//VALUE
+          const number = numberWithComma.format(key);
+          const html = '<tr><th>タイム:'+number+'秒　　　</th><td>'+value+'問正解</td></tr>';
+          $("#list").append(html);
+
+          if(r < 2){
+            localStorage.removeItem(key);
+          }
+          
+      };
+
+//ここまでが記述領域［END］
+</script>
+</body>
+</html>

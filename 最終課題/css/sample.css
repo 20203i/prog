@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 32px;
+  background-color: rgba(81, 114, 91, 0.582);
+  color: rgb(99, 72, 32);
+  font-family: 'SimSun';
+}
+
+header {
+  background-color: rgb(112, 98, 129);
+  margin-top: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #fff;
+
+  padding: 1rem 2rem;
+  border-top: 3px dashed rgb(255, 255, 255);
+  border-bottom: 3px dashed rgb(255, 255, 255);
+}
+
+h1{
+  color: rgba(255, 255, 255, 0.829);
+}
+.time{
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 34px;
+}
+.quest{
+  font-size: 36px;
+  margin-bottom: -60px;
+}
+h2{
+  margin-left: 30px;
+  font-size: 28px;
+}
+
+h7{
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.txt{
+  margin-top: 50px;
+  display: inline-block;
+  color: rgb(99, 72, 32);
+  width: 430px;
+  padding: 1em 0.5em;
+  line-height: 2;
+  font-size: 32px;
+  text-align: center;
+  background-color:rgba(224, 218, 204, 0.973);
+  font-family: 'SimSun';
+}
+
+footer {
+  border-bottom: 2px solid rgb(112, 98, 129);
+}
+
+p {
+  font-size: 100%;
+  text-align: center;
+  height: 100px;
+  font-family: 'HG正楷書体-PRO';
+}
+
+h3{
+  margin-top: 100px;
+  text-align: center;
+}
+h4{
+  text-align: center;
+  /* margin-bottom: -100px; */
+  
+}
+
+h6{
+  background-color: rgb(112, 98, 129);
+  font-size: 26px;
+  margin: 20px;
+  padding-left: 30px;
+  color: rgba(255, 254, 251, 0.829);
+  padding: 1rem 2rem;
+  border-top: 3px dashed rgb(255, 255, 255);
+  border-bottom: 3px dashed rgb(255, 255, 255);
+}
+table{
+  font-size: 25px;
+  text-align: center;
+  color: rgb(99, 72, 32);
+  margin-left: 21px;
+  padding: 0.5rem 2rem;
+  border-left: 3px dashed rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+img{
+  text-align: right;
+  width: 250px;
+  margin-top: -70px;
+}
